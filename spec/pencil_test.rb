@@ -40,6 +40,8 @@ describe Pencil do
     it 'adds the write input to the text value' do
       @pencil.write('This is a test')
       @pencil.text.must_equal 'This is a test'
+      @pencil.write(', this is another test')
+      @pencil.text.must_equal 'This is a test, this is another test'
     end
   end
 
