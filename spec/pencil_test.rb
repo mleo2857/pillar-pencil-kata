@@ -34,7 +34,7 @@ describe Pencil do
 
   it 'should begin with an empty text string' do
     subject.text.must_be_instance_of String
-    subject.text.must_equal ''
+    subject.text.must_equal ""
   end
 
   describe '#write' do
@@ -51,6 +51,12 @@ describe Pencil do
       @pencil.text.must_equal 'This is a test'
       @pencil.write(', this is another test')
       @pencil.text.must_equal 'This is a test, this is another test'
+    end
+
+    it 'only adds spaces if it is dull' do
+      @pencil.setDurability(0)
+      @pencil.write('This is a test')
+      @pencil.text.must_equal "              "
     end
   end
 
