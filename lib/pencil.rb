@@ -66,4 +66,7 @@ class Pencil
   def setDurability newDurability
     @durability = newDurability
   end
+
+  def sharpen
+  end
 end
