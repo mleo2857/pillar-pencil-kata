@@ -9,11 +9,16 @@ class Pencil
 
   def write text
     if @durability == 0
-      text.length.times do
-        @text += ' '
-      end
+      addSpaces(text)
     else
       @text += text
+    end
+
+  end
+
+  def addSpaces text
+    text.length.times do
+      @text += ' '
     end
   end
 
