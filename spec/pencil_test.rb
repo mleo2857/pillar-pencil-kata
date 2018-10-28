@@ -28,4 +28,14 @@ describe Pencil do
     subject.text.must_equal ''
   end
 
+  describe '#write' do
+    before do
+      @pencil = Pencil.new 15
+    end
+
+    it 'responds to the write method' do
+      @pencil.must_respond_to 'write'
+    end
+  end
+
 end

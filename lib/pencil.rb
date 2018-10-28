@@ -5,4 +5,5 @@ class Pencil
     @length = length
     @text = ''
   end
+  
 end
