@@ -77,5 +77,5 @@ class Pencil
       @length = 0
     end
   end
-  
+
 end
