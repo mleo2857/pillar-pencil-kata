@@ -78,6 +78,12 @@ describe Pencil do
       @pencil.write("aA!bB?")
       @pencil.durability.must_equal (10000-8)
     end
+
+    it 'should only allow to write as much text as durability allows' do
+      @pencil.setDurability(4)
+      @pencil.write("Text")
+      @pencil.text.must_equal "Tex "
+    end
   end
 
 end
