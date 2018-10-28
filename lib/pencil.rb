@@ -3,5 +3,6 @@ class Pencil
 
   def initialize length
     @length = length
+    @text = ''
   end
 end
