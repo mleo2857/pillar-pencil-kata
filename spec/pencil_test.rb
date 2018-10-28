@@ -115,4 +115,13 @@ describe Pencil do
     end
   end
 
+  describe '#erase' do
+    before do
+      @pencil = Pencil.new 15, 10000
+    end
+
+    it 'responds to erase' do
+      @pencil.must_respond_to 'erase'
+    end
+  end
 end
