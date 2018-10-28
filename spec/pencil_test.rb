@@ -4,7 +4,7 @@ require 'minitest/spec'
 require '../lib/pencil'
 
 describe Pencil do
-  subject {Pencil.new 5}
+  subject {Pencil.new 5, 20000}
 
   it 'must be instance of Pencil' do
     subject.must_be_instance_of Pencil
@@ -19,12 +19,12 @@ describe Pencil do
   end
 
   it 'must initialize with a given length' do
-    pencil = Pencil.new 10
+    pencil = Pencil.new 10, 10000
     pencil.length.must_equal 10
   end
 
   it 'must initialize with a given durability' do
-    pencil = Pencil.new 10 10000
+    pencil = Pencil.new 10, 10000
     pencil.durability.must_equal 10000
   end
 
@@ -39,7 +39,7 @@ describe Pencil do
 
   describe '#write' do
     before do
-      @pencil = Pencil.new 15
+      @pencil = Pencil.new 15, 10000
     end
 
     it 'responds to the write method' do
