@@ -6,6 +6,7 @@ class Pencil
     @text = ''
   end
 
-  def write
+  def write text
+    @text += text
   end
 end
