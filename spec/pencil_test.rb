@@ -4,7 +4,7 @@ require 'minitest/spec'
 require '../lib/pencil'
 
 describe Pencil do
-  subject {Pencil.new}
+  subject {Pencil.new 5}
 
   it 'must be instance of Pencil' do
     subject.must_be_instance_of Pencil
