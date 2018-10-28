@@ -14,4 +14,9 @@ describe Pencil do
     subject.must_respond_to 'length'
   end
 
+  it 'must initialize with a given length' do
+    pencil = Pencil.new 10
+    pencil.length.must_equal 10
+  end
+
 end
