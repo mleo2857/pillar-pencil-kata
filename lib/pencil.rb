@@ -3,6 +3,7 @@ class Pencil
 
   def initialize length, initialDurability
     @length = length
+    @initialDurability = initialDurability
     @durability = initialDurability
     @text = ""
   end
@@ -68,5 +69,6 @@ class Pencil
   end
 
   def sharpen
+    @durability = @initialDurability
   end
 end
