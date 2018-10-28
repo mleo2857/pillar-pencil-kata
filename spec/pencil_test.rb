@@ -75,8 +75,8 @@ describe Pencil do
     end
 
     it 'should degrade 1 durability point for lower case and 2 for upper case' do
-      @pencil.write("aAbB")
-      @pencil.durability.must_equal (10000-6)
+      @pencil.write("aA!bB?")
+      @pencil.durability.must_equal (10000-8)
     end
   end
 

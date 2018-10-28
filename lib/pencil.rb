@@ -13,7 +13,14 @@ class Pencil
     else
       @text += text
       textCharacterArray = text.split(%r{\s*})
-      @durability -= textCharacterArray.length
+      lettersArray = ('A'..'Z').to_a + ('a'..'z').to_a
+      textCharacterArray.each do |character|
+        if lettersArray.include?(character) && character == character.upcase
+          @durability -= 2
+        else
+          @durability -= 1
+        end
+      end
     end
 
   end
