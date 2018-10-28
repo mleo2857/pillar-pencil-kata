@@ -23,6 +23,11 @@ describe Pencil do
     pencil.length.must_equal 10
   end
 
+  it 'must initialize with a given durability' do
+    pencil = Pencil.new 10 10000
+    pencil.durability.must_equal 10000
+  end
+
   it 'should keep track of text' do
     subject.must_respond_to 'text'
   end
