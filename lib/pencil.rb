@@ -78,4 +78,7 @@ class Pencil
     end
   end
 
+  def erase
+  end
+
 end
