@@ -69,7 +69,13 @@ class Pencil
   end
 
   def sharpen
-    @durability = @initialDurability
-    @length -= 1
+    if @length > 1
+      @durability = @initialDurability
+      @length -= 1
+    else
+      @durability = 0
+      @length = 0
+    end
   end
+  
 end
