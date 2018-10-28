@@ -86,4 +86,14 @@ describe Pencil do
     end
   end
 
+  describe '#sharpen' do
+    before do
+      @pencil = Pencil.new 10, 40000
+    end
+
+    it 'responds to the sharpen method' do
+      @pencil.must_respond_to 'sharpen'
+    end
+  end
+
 end
