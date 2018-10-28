@@ -5,5 +5,7 @@ class Pencil
     @length = length
     @text = ''
   end
-  
+
+  def write
+  end
 end
