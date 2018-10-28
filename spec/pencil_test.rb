@@ -63,6 +63,11 @@ describe Pencil do
       @pencil.write('a')
       @pencil.durability.must_equal 9999
     end
+
+    it 'should not degrade for spaces' do
+      @pencil.write('a b')
+      @pencil.durability.must_equal 9998
+    end
   end
 
 end
