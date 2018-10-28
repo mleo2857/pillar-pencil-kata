@@ -19,4 +19,8 @@ describe Pencil do
     pencil.length.must_equal 10
   end
 
+  it 'should keep track of text' do
+    subject.must_respond_to 'text'
+  end
+
 end
