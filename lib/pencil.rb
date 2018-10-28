@@ -8,18 +8,38 @@ class Pencil
   end
 
   def write text
+    degradePoints = 0
+    textCharacterArray = text.split(%r{\s*})
+    lettersArray = ('A'..'Z').to_a + ('a'..'z').to_a
+    textCharacterArray.each do |character|
+      if lettersArray.include?(character) && character == character.upcase
+        degradePoints += 2
+      else
+        degradePoints += 1
+      end
+    end
+
     if @durability == 0
       addSpaces(text)
-    else
+    elsif degradePoints < @durability
       @text += text
-      textCharacterArray = text.split(%r{\s*})
-      lettersArray = ('A'..'Z').to_a + ('a'..'z').to_a
+      @durability -= degradePoints
+    else
       textCharacterArray.each do |character|
         if lettersArray.include?(character) && character == character.upcase
           @durability -= 2
         else
           @durability -= 1
         end
+
+        if @durability >= 0
+          @text += character
+        else
+          @text += " "
+        end
+      end
+      if @durability < 0
+        @durability = 0
       end
     end
 
