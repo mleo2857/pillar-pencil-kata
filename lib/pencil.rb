@@ -12,7 +12,8 @@ class Pencil
       addSpaces(text)
     else
       @text += text
-      @durability -= text.length
+      textCharacterArray = text.split(%r{\s*})
+      @durability -= textCharacterArray.length
     end
 
   end
