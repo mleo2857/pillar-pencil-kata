@@ -23,4 +23,9 @@ describe Pencil do
     subject.must_respond_to 'text'
   end
 
+  it 'should begin with an empty text string' do
+    subject.text.must_be_instance_of String
+    subject.text.must_equal ''
+  end
+
 end
