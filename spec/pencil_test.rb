@@ -36,6 +36,11 @@ describe Pencil do
     it 'responds to the write method' do
       @pencil.must_respond_to 'write'
     end
+
+    it 'adds the write entry to the text value' do
+      @pencil.write('This is a test')
+      @pencil.text.must_equal 'This is a test'
+    end
   end
 
 end
