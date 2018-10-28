@@ -105,6 +105,14 @@ describe Pencil do
       @pencil.sharpen
       @pencil.length.must_equal 9
     end
+
+    it 'stops sharpening when length is 0' do
+      pencil = Pencil.new 1, 10000
+      pencil.write("text")
+      pencil.sharpen
+      pencil.length.must_equal 0
+      pencil.durability.must_equal 0
+    end
   end
 
 end
