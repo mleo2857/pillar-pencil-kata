@@ -1,5 +1,5 @@
 class Pencil
-  attr_reader :length, :text
+  attr_reader :length, :text, :durability
 
   def initialize length
     @length = length
