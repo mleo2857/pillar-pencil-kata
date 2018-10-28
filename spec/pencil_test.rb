@@ -58,6 +58,11 @@ describe Pencil do
       @pencil.write('This is a test')
       @pencil.text.must_equal "              "
     end
+
+    it 'degrades durability' do
+      @pencil.write('a')
+      @pencil.durability.must_equal 9999
+    end
   end
 
 end
