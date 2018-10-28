@@ -94,6 +94,12 @@ describe Pencil do
     it 'responds to the sharpen method' do
       @pencil.must_respond_to 'sharpen'
     end
+
+    it 'restores pencil to original durability' do
+      @pencil.write('Text')
+      @pencil.sharpen
+      @pencil.durability.must_equal 40000
+    end
   end
 
 end
