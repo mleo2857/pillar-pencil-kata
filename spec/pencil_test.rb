@@ -123,5 +123,10 @@ describe Pencil do
     it 'responds to erase' do
       @pencil.must_respond_to 'erase'
     end
+
+    it 'replaces last occurrence of word with spaces' do
+      @pencil.write("How much wood would a woodchuck chuck if a woodchuck could chuck wood?")
+      @pencil.erase("chuck")
+    end
   end
 end
