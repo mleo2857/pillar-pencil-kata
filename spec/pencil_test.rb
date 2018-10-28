@@ -100,6 +100,11 @@ describe Pencil do
       @pencil.sharpen
       @pencil.durability.must_equal 40000
     end
+
+    it 'reduces the pencil length by 1' do
+      @pencil.sharpen
+      @pencil.length.must_equal 9
+    end
   end
 
 end
