@@ -68,6 +68,11 @@ describe Pencil do
       @pencil.write('a b')
       @pencil.durability.must_equal 9998
     end
+
+    it 'should not degrade for line breaks' do
+      @pencil.write("a\nb")
+      @pencil.durability.must_equal 9998
+    end
   end
 
 end
