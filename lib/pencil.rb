@@ -78,7 +78,17 @@ class Pencil
     end
   end
 
-  def erase
+  def erase text
+    replacementSpace = ""
+    spaces = text.length.times do
+      replacementSpace += " "
+    end
+    textWithWordRemovedArray = @text.split(text)
+    i = 0
+    while i <= textWithWordRemovedArray.length - 2
+      @text += textWithWordRemovedArray[i] + text
+      i += 1
+    end
   end
 
 end
