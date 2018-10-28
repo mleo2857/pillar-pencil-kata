@@ -12,6 +12,7 @@ class Pencil
       addSpaces(text)
     else
       @text += text
+      @durability -= text.length
     end
 
   end
