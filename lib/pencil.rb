@@ -79,10 +79,19 @@ class Pencil
   end
 
   def erase text
+    replacementSpace = getReplacementSpace(text)
+    reprintTextWithoutLastWord(text, replacementSpace)
+  end
+
+  def getReplacementSpace text
     replacementSpace = ""
     text.length.times do
       replacementSpace += " "
     end
+    return replacementSpace
+  end
+
+  def reprintTextWithoutLastWord text, replacementSpace
     textWithWordRemovedArray = @text.split(text)
     @text = ""
     i = 0
@@ -93,6 +102,7 @@ class Pencil
     @text += textWithWordRemovedArray[textWithWordRemovedArray.length - 2]
     @text += replacementSpace
     @text += textWithWordRemovedArray[textWithWordRemovedArray.length - 1]
+    return @text
   end
 
 end
