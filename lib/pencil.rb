@@ -86,9 +86,19 @@ class Pencil
   end
 
   def getReplacementSpace text
-    replacementSpace = ""
-    text.length.times do
-      replacementSpace += " "
+    if @eraserDurability == 0
+      replacementSpace = text
+    elsif @eraserDurability > text.length
+      replacementSpace = ""
+      text.length.times do
+        replacementSpace += " "
+      end
+    else
+      textLettersToArray = text.split(%r{\s*})
+      @eraserDurability.times do
+        textLettersToArray.pop
+      end
+      replacementSpace = textLettersToArray.join
     end
     return replacementSpace
   end
