@@ -102,6 +102,7 @@ class Pencil
         textLettersToArray.pop
       end
       replacementSpace = textLettersToArray.join
+      @eraserDurability = 0
     end
     return replacementSpace
   end
