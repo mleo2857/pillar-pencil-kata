@@ -95,14 +95,23 @@ class Pencil
   def reprintTextWithoutLastWord text, replacementSpace
     textWithWordRemovedArray = @text.split(text)
     @text = ""
-    i = 0
-    while i <= textWithWordRemovedArray.length - 3
-      @text += textWithWordRemovedArray[i] + text
-      i += 1
+    case textWithWordRemovedArray.length
+    when 0
+        @text += replacementSpace
+    when 1
+        @text += textWithWordRemovedArray[0]
+        @text += replacementSpace
+    when 2
+        @text += textWithWordRemovedArray[0]
+        @text += replacementSpace
+        @text += textWithWordRemovedArray[1]
+    else
+        lastArrayElement = textWithWordRemovedArray.pop
+        @text += textWithWordRemovedArray.join(text)
+        @text += replacementSpace
+        @text += lastArrayElement
     end
-    @text += textWithWordRemovedArray[textWithWordRemovedArray.length - 2]
-    @text += replacementSpace
-    @text += textWithWordRemovedArray[textWithWordRemovedArray.length - 1]
+
     return @text
   end
 

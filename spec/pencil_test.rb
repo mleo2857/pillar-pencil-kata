@@ -140,5 +140,11 @@ describe Pencil do
       @pencil.erase("chuck")
       @pencil.text.must_equal("How much wood would a woodchuck chuck if a wood      could       wood?")
     end
+
+    it 'works with strings of any length' do
+      @pencil.write("Buffallo Bill")
+      @pencil.erase("Bill")
+      @pencil.text.must_equal("Buffallo     ")
+    end
   end
 end
