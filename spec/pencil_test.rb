@@ -32,6 +32,11 @@ describe Pencil do
     pencil.durability.must_equal 10000
   end
 
+  it 'must initialize with a given eraser durability' do
+    pencil = Pencil.new 10, 10000, 5000
+    pencil.eraserDurability.must_equal 5000
+  end
+
   it 'should keep track of text' do
     subject.must_respond_to 'text'
   end
