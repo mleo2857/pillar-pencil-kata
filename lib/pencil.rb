@@ -82,6 +82,7 @@ class Pencil
   def erase text
     replacementSpace = getReplacementSpace(text)
     reprintTextWithoutLastWord(text, replacementSpace)
+    @eraserDurability -= text.length
   end
 
   def getReplacementSpace text
