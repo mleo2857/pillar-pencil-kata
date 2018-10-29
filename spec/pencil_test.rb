@@ -127,6 +127,7 @@ describe Pencil do
     it 'replaces last occurrence of word with spaces' do
       @pencil.write("How much wood would a woodchuck chuck if a woodchuck could chuck wood?")
       @pencil.erase("chuck")
+      @pencil.text.must_equal("How much wood would a woodchuck chuck if a woodchuck could       wood?")
     end
   end
 end
