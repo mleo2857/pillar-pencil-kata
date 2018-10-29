@@ -1,10 +1,11 @@
 class Pencil
   attr_reader :length, :text, :durability, :eraserDurability
 
-  def initialize length, initialDurability
+  def initialize length, initialDurability, eraserDurability
     @length = length
     @initialDurability = initialDurability
     @durability = initialDurability
+    @eraserDurability = eraserDurability
     @text = ""
   end
 
