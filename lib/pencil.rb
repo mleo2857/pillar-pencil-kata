@@ -127,6 +127,11 @@ class Pencil
   end
 
   def edit word
+    whitespaceIndex = findWhiteSpaceIndex
+    insertWord(word, whitespaceIndex)
+  end
+
+  def findWhiteSpaceIndex
     whitespaceIndex = 0
     i = 0
     while i < @text.length
@@ -137,12 +142,15 @@ class Pencil
       i += 1
     end
 
+    return whitespaceIndex
+  end
+
+  def insertWord word, whitespaceIndex
     letter = 0
     while letter <= word.length - 1
       @text[whitespaceIndex + letter] = word[letter]
       letter += 1
     end
-
   end
 
 end
