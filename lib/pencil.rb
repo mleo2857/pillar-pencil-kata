@@ -126,7 +126,22 @@ class Pencil
     return @text
   end
 
-  def edit text
+  def edit word
+    whitespaceIndex = 0
+    i = 0
+    while i < @text.length
+      if @text[i] == " " && @text[i + 1] == " "
+        whitespaceIndex = i + 1
+        break
+      end
+      i += 1
+    end
+
+    letter = 0
+    while letter <= word.length - 1
+      @text[whitespaceIndex + letter] = word[letter]
+      letter += 1
+    end
 
   end
 
