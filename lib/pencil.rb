@@ -148,7 +148,11 @@ class Pencil
   def insertWord word, whitespaceIndex
     letter = 0
     while letter <= word.length - 1
-      @text[whitespaceIndex + letter] = word[letter]
+      if @text[whitespaceIndex + letter] == " "
+        @text[whitespaceIndex + letter] = word[letter]
+      else
+        @text[whitespaceIndex + letter] = "@"
+      end
       letter += 1
     end
   end
