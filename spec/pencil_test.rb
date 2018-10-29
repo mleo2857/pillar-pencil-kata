@@ -152,5 +152,12 @@ describe Pencil do
       @pencil.erase("Bill")
       @pencil.eraserDurability.must_equal (5000-4)
     end
+
+    it 'only erases as much as eraser durability allows' do
+      pencil = Pencil.new 15, 10000, 3
+      pencil.write("Buffallo Bill")
+      pencil.erase("Bill")
+      pencil.text.must_equal "Buffallo B"
+    end
   end
 end
