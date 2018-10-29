@@ -146,5 +146,11 @@ describe Pencil do
       @pencil.erase("Bill")
       @pencil.text.must_equal("Buffallo     ")
     end
+
+    it 'reduces the eraser durability' do
+      @pencil.write("Buffallo Bill")
+      @pencil.erase("Bill")
+      @pencil.eraserDurability.must_equal (5000-4)
+    end
   end
 end
