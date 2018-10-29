@@ -18,6 +18,10 @@ describe Pencil do
     subject.must_respond_to 'durability'
   end
 
+  it 'must have eraser durability' do
+    subject.must_respond_to 'eraserDurability'
+  end
+
   it 'must initialize with a given length' do
     pencil = Pencil.new 10, 10000
     pencil.length.must_equal 10
@@ -128,6 +132,8 @@ describe Pencil do
       @pencil.write("How much wood would a woodchuck chuck if a woodchuck could chuck wood?")
       @pencil.erase("chuck")
       @pencil.text.must_equal("How much wood would a woodchuck chuck if a woodchuck could       wood?")
+      @pencil.erase("chuck")
+      @pencil.text.must_equal("How much wood would a woodchuck chuck if a wood      could       wood?")
     end
   end
 end
