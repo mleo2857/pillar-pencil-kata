@@ -175,5 +175,11 @@ describe Pencil do
       @pencil.edit("onion")
       @pencil.text.must_equal "An onion a day keeps the doctor away"
     end
+
+    it 'replaces existing text with an @ symbol' do
+      @pencil.write("An       a day keeps the doctor away")
+      @pencil.edit("artichoke")
+      @pencil.text.must_equal "An artich@k@ay keeps the doctor away"
+    end
   end
 end
