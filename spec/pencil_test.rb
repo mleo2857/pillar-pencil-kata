@@ -160,4 +160,14 @@ describe Pencil do
       pencil.text.must_equal "Buffallo B"
     end
   end
+
+  describe '#edit' do
+    before do
+      @pencil = Pencil.new 15, 10000, 5000
+    end
+
+    it 'responds to edit' do
+      @pencil.must_respond_to 'edit'
+    end
+  end
 end
