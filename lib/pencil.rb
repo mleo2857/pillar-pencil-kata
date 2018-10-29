@@ -10,7 +10,6 @@ class Pencil
   end
 
   def write text
-
     textCharacterArray = text.split(%r{\s*})
     lettersArray = ('A'..'Z').to_a + ('a'..'z').to_a
     degradePoints = getDegradePoints(textCharacterArray, lettersArray)
@@ -18,20 +17,13 @@ class Pencil
     if @durability == 0
       addSpaces(text)
     elsif degradePoints < @durability
-      @text += text
-      @durability -= degradePoints
+      addFullText(text, degradePoints)
     else
-      @text += printPartialText(textCharacterArray,lettersArray)
+      addPartialText(textCharacterArray,lettersArray)
 
       if @durability < 0
         @durability = 0
       end
-    end
-  end
-
-  def addSpaces text
-    text.length.times do
-      @text += ' '
     end
   end
 
@@ -47,7 +39,13 @@ class Pencil
     return degradePoints
   end
 
-  def printPartialText textCharacterArray, lettersArray
+  def addSpaces text
+    text.length.times do
+      @text += ' '
+    end
+  end
+
+  def addPartialText textCharacterArray, lettersArray
     textToAdd = ""
     textCharacterArray.each do |character|
       if lettersArray.include?(character) && character == character.upcase
@@ -62,7 +60,12 @@ class Pencil
         textToAdd += " "
       end
     end
-    return textToAdd
+    @text += textToAdd
+  end
+
+  def addFullText text, degradePoints
+    @text += text
+    @durability -= degradePoints
   end
 
   def setDurability newDurability
@@ -86,7 +89,7 @@ class Pencil
   end
 
   def getReplacementSpace text
-    if @eraserDurability == 0
+    if @eraserDurability <= 0
       replacementSpace = text
     elsif @eraserDurability > text.length
       replacementSpace = ""
