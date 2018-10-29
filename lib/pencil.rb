@@ -126,4 +126,7 @@ class Pencil
     return @text
   end
 
+  def edit
+  end
+
 end
