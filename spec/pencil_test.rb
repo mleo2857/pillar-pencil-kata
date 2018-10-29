@@ -169,5 +169,11 @@ describe Pencil do
     it 'responds to edit' do
       @pencil.must_respond_to 'edit'
     end
+
+    it 'replaces whitespace with a given word' do
+      @pencil.write("An       a day keeps the doctor away")
+      @pencil.edit("onion")
+      @pencil.text.must_equal "An onion a day keeps the doctor away"
+    end
   end
 end
