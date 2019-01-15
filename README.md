@@ -1,5 +1,8 @@
 # pillar-pencil-kata
+
 This is my solution to the Pencil Durability kata
+
+Instructions for this kata can be found here: https://github.com/PillarTechnology/kata-pencil-durability
 
 I wrote this using Ruby and the tests were run using the ruby minitest unit testing framework.
 
